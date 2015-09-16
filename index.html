@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chart</title>
+    <script src="amcharts/amcharts.js"></script>
+    <script src="amcharts/pie.js"></script>
+    <script src="amcharts/serial.js"></script>
+    <script src="amcharts/funnel.js"></script>
+    <script src="amcharts/gantt.js"></script>
+    <script src="amcharts/gauge.js"></script>
+    <script src="amcharts/radar.js"></script>
+    <script src="amcharts/xy.js"></script>
+    <style>
+        form {
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        #chartdiv:after {
+            content: "";
+            position: absolute;
+            top: 20%;
+            left: 35%;
+            z-index: 1;
+            height: 45%;
+            width: 30%;
+            background-color: aqua;
+        }
+        .trivialExps {
+            display: none;
+        }
+        #takaChart1,#piechart,
+        #linechart,#piechart-population,
+        .nested-donut{
+            height: 300px;
+            width: 30%;
+            float: left;
+            font-family: cursive;
+        }
+        #range-selector{
+            width: 300px;
+            height: 26px;
+            border-radius: 15px;
+            background-color: #6b6b6b;
+            float: left;
+            margin-top: 145px;
+            position: relative;
+        }
+        #selected-portion{
+            width: 10%;
+            position: absolute;
+            top: 50%;
+            left: 2px;
+            height: 22px;
+            background-color: #9AC460;
+            border-radius: 15px;
+            margin-top: -11px;
+        }
+        .nested-donut {
+            position: relative;
+        }
+
+        .chartdiv {
+            width   : 100%;
+            height  : 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }     
+    </style>
+</head>
+<body>
+   <section class="trivialExps">
+    <div id="chartdiv" style="width: 640px; height: 400px;">         </div>
+    <form>
+        Title
+        <input type="text" id="titleInput">
+        <br>
+        Value
+        <input type="number" id="numberInput">
+        <button type="button" id="addBtn">Add</button>
+    </form>
+    <h6>Radius</h6>
+    <button id="plusChart">+</button>
+    <button id="minusChart">-</button>
+    </section>
+    <section>
+      <!--  <h3>Serious Chart</h3> -->
+        <div id="takaChart1"></div>
+        <!-- <h3>pie chart</h3> -->
+        <div id="piechart"></div>
+        <!-- <h3>line chart</h3> -->
+        <div id="linechart"></div>
+        <div id="piechart-population"></div>
+        <div id="range-selector">
+            <div id="selected-portion"></div>
+        </div>
+        <div class="nested-donut">
+            <div id="inner-chart" class="chartdiv"></div>
+            <div id="outer-chart" class="chartdiv"></div>
+        </div>
+    </section>
+<!--    <script src="scripts/app.js"></script>-->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="scripts/serious.js"></script>
+    
+</body>
+</html>
